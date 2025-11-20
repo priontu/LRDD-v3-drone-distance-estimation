@@ -12,7 +12,7 @@ from torchvision import transforms as T
 import pytorch_lightning as pl
 import torch.nn.functional as F
 from torch import nn
-from torchvision.models import resnet18, ResNet18_Weights
+from torchvision.models import resnet50, ResNet50_Weights
 import matplotlib.pyplot as plt
 
 
@@ -302,7 +302,7 @@ class DistanceRegressor(pl.LightningModule):
         super().__init__()
         self.save_hyperparameters()
 
-        backbone = resnet18(weights=ResNet18_Weights.DEFAULT)
+        backbone = resnet50(weights=ResNet50_Weights.DEFAULT)
         num_features = backbone.fc.in_features
         backbone.fc = nn.Linear(num_features, 1)
 
