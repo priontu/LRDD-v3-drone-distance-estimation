@@ -21,3 +21,5 @@ Thumbs.db
 **/checkpoints/
 notebook/*
 !notebook/notebook.ipynb
+*/lightning_logs/*
+*cpkt
